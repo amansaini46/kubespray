@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo 
+  tasks: 
+  - name: update all packages
+    yum : 
+      name: "*"
+      state: latest
+      update_cache: yes
+      update_only: yes
